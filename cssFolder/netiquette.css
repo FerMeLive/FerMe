@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: rgb(241, 241, 241);
+}
+
+:root{
+    --headerBackColor: #071426;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #e2e2e2;
+    --whiteColor: #fff;
+}
+
+/* -- Start of cookie popup -- */
+
+.cookiePopup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 25px 25px;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+}
+
+.cookiePopup.hide{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.cookieImg{
+    max-width: 80px;
+}
+
+.content{
+    margin-top: 10px;
+}
+
+.content h3{
+    font-size: 22px;
+    font-weight: bold;
+    color: #1b1b1b;
+}
+
+.content p{
+    margin-top: 5px;
+}
+
+.popupBtn{
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    background: var(--btnBackColor);
+    color: var(--whiteColor);
+    padding: 7px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.content a{
+    color: var(--btnBackColor);
+    font-weight: bold;
+    padding: 0 7px;
+}
+
+/* -- Finish of cookie popup -- */
+
+header{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    height: 15px;
+    width: 100%;
+    background: var(--headerBackColor);
+}
+
+header .fermeLogo{
+    width: 50px;
+}
+
+header .showMenuBtn{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    width: 35px;
+    height: 50px;
+    border: none;
+}
+
+header .showMenuBtn img{
+    width: 70%;
+}
+
+#showMenu{
+    display: block;
+}
+#showMenu:checked ~ .sidebar{
+    width: 300px;
+    margin-left: 0;
+}
+#showMenu:not(:checked) ~ .sidebar ul li a{
+    display: none;
+}
+
+.fermeLogo{
+    width: 50px;
+    position: absolute;
+    left: 48%;
+}
+
+.sidebar{
+    position: fixed;
+    margin-left: -60px;
+    width: 60px;
+    height: 95%;
+    left: 0;
+    top: 60px;
+    background: var(--headerBackColor);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.sidebar ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: var(--whiteColor);
+    text-decoration: none;
+    line-height: 60px;
+    align-items: center;
+}
+
+.sidebar ul li a .icon{
+    fill: var(--whiteColor);
+    position: relative;
+    display: block;
+    width: 60px;
+    line-height: 60px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a span{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+.mainContent{
+    width: 100%;
+    height: 100%;
+}
+
+.mainContent .welcomeBlock{
+    min-width: 70%;
+    text-align: center;
+    height: 100vh;
+}
+
+.welcomeBlock h1{
+    margin-top: 120px;
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.welcomeBlock p{
+    font-weight: 600;
+    font-size: 18px;
+}

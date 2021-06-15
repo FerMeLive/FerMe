@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --mainBodyColor: #f9f9f9;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #f1f1f1;
+    --whiteColor: #fff;
+    --darkTxtColor: #071426;
+
+    /*--mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #22262e;
+    --darkTxtColor: #e7e7e7;*/
+}
+.darkMode{
+    --mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #23262e;
+    --darkTxtColor: #e7e7e7;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: var(--mainBodyColor);
+}
+
+/* -- Start of cookie popup -- */
+
+.cookiePopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 25px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.cookiePopup.hide{
+    display: none;
+}
+
+.cookieImg{
+    max-width: 80px;
+}
+
+.content{
+    margin-top: 10px;
+}
+
+.content h3{
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--darkTxtColor);
+}
+
+.content p{
+    margin-top: 5px;
+    color: var(--darkTxtColor);
+}
+
+.popupBtn{
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    background: var(--btnBackColor);
+    color: #fff;
+    padding: 7px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.content a{
+    color: var(--btnBackColor);
+    font-weight: bold;
+    padding: 0 7px;
+}
+
+/* -- Finish of cookie popup -- */
+
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding: 30px 10px;
+    height: 15px;
+    width: 100%;
+    background: var(--whiteColor);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.welcomeTxt{
+    font-size: 17px;
+    color: var(--darkTxtColor);
+    font-weight: 600;
+}
+
+.showMenuBtn{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    width: 35px;
+    height: 50px;
+}
+
+.showMenuBtn svg{
+    width: 80%;
+    fill: var(--darkTxtColor);
+}
+
+#showMenu{
+    display: block;
+}
+#showMenu:checked ~ .sidebar{
+    width: 300px;
+    margin-left: 0;
+}
+#showMenu:not(:checked) ~ .sidebar ul li a{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar .accBtn{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar #darkmodeBtn{
+    display: none;
+}
+.header .fermeLogo{
+    width: 50px;
+    margin-left: 50px;
+}
+
+.header .regBtn{
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-self: flex-end;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.sidebar{
+    position: fixed;
+    margin-left: -60px;
+    width: 60px;
+    height: 95%;
+    left: 0;
+    top: 60px;
+    background: var(--whiteColor);
+    transition: 0.5s;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul{
+    top: 0;
+    left: 0;
+    min-width: 100%;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li:hover{
+    background: var(--darkerWhiteTxtColor);
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: var(--whiteColor);
+    text-decoration: none;
+    line-height: 60px;
+    align-items: center;
+}
+
+.sidebar ul li a .icon{
+    fill: var(--darkTxtColor);
+    position: relative;
+    display: block;
+    width: 60px;
+    line-height: 60px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a span{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 60px;
+    color: var(--darkTxtColor);
+}
+
+#darkmodeBtn{
+    cursor: pointer;
+    left: 15px;
+    fill: var(--darkTxtColor);
+    position: fixed;
+    bottom: 10px;
+}
+
+.accBtn{
+    position: fixed;
+    bottom: 10px;
+    left: 55px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.mainContent{
+    min-width: 100%;
+    height: 100%;
+}
+
+.mainContent .welcomeBlock{
+    min-width: 70%;
+    min-height: 140px;
+    margin-left: 60px;
+}
+
+.welcomeBlock h1{
+    color: var(--darkTxtColor);
+    margin-top: 100px;
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.welcomeBlock p{
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--darkTxtColor);
+}
+
+.mainContent .profileBlock{
+    min-width: 100%;
+    min-height: 120vh;
+}
+
+.mainProfileBlock{
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileBlock .rightProfileBlock{
+    width: 60%;
+    min-height: 450px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.initialProfileBlock{
+    margin-left: 60px;
+    min-width: 90%;
+    min-height: 110px;
+    max-height: 110px;
+    display: flex;
+    flex-direction: row;
+}
+.modProfileBlock{
+    width: 30%;
+    height: 400px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.mainContent .amicizieBlock{
+    width: 80%;
+    min-height: 450px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.initialProfileBlock .profileImg{
+    margin-left: 0;
+    align-self: center;
+    border-radius: 100px;
+}
+
+.initialProfileBlock h3{
+    margin-left: 15px;
+    color: var(--darkTxtColor);
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.rightProfileBlock pre{
+    margin-left: 20px;
+    color: var(--darkTxtColor);
+    text-align: justify;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.emailTxt{
+    max-width: 90%;
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 15px;
+    font-weight: bold;
+    color: var(--darkTxtColor);
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.descrizioneTxt{
+    font-size: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: var(--darkTxtColor);
+    padding-top: 10px;
+}
+
+.descrizioneTxt pre{
+    margin-left: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+.mainContent .titleTxt{
+    color: var(--darkTxtColor);
+    margin-left: 20px;
+    font-size: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.rightProfileBlock .statisticheTxt{
+    margin-left: 20px;
+    color: var(--darkTxtColor);
+    word-wrap: break-word;
+    text-align: justify;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+.modProfileBlock .titleTxt{
+    color: var(--darkTxtColor);
+    margin-left: 20px;
+    font-size: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.modProfileBlock .modBtn{
+    margin-left: 12px;
+    display: block;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}
+
+.modBtn svg{
+    fill: #fff;
+    margin-right: 6px;
+}
+
+.modProfileBlock .modemailBtn{
+    width: 155px;
+}
+.modProfileBlock .modpicsBtn{
+    width: 190px;
+}
+.modProfileBlock .modpassBtn{
+    width: 185px;
+}
+.modProfileBlock .moddescBtn{
+    width: 210px;
+}
+.modProfileBlock .esciBtn{
+    width: 80px;
+}
+.modProfileBlock .delBtn{
+    width: 165px;
+    background: rgb(221, 25, 25);
+}
+
+.amicizieBlock .subtitleTxt{
+    color: var(--darkTxtColor);
+    margin-left: 20px;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.amicizieBlock .amicizieBlocks{
+    width: 100%;
+    min-height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.amicizieBlock .richiestaInviataBox{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background: var(--mainBodyColor);
+    border-radius: 20px;
+    width: 150px;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}
+.amicizieBlock .richiestaInviataBox img{
+    margin-top: 5px;
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+}
+.amicizieBlock .richiestaInviataBox .nameBtn{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 18px;
+    word-wrap: break-word;
+    font-weight: 700;
+    color: var(--darkTxtColor);
+}
+.amicizieBlock .richiestaInviataBox .delBtn{
+    outline: none;
+    border: none;
+    background: var(--btnBackColor);
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}

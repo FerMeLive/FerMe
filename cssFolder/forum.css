@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+    --mainBodyColor: #f9f9f9;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #e2e2e2;
+    --whiteColor: #fff;
+    --darkTxtColor: #071426;
+
+    /*--mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #22262e;
+    --darkTxtColor: #e7e7e7;*/
+}
+.darkMode{
+    --mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #22262e;
+    --darkTxtColor: #e7e7e7;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: var(--mainBodyColor);
+}
+
+/* -- Start of cookie popup -- */
+
+.cookiePopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 25px 25px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0, 0.2); /* sul server mettere 0,0,0,0.1 perchè fa schifo */
+}
+
+.cookiePopup.hide{
+    display: none;
+}
+
+.cookieImg{
+    max-width: 80px;
+}
+
+.content{
+    margin-top: 10px;
+}
+
+.content h3{
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--darkTxtColor);
+}
+
+.content p{
+    margin-top: 5px;
+    color: var(--darkTxtColor);
+}
+
+.popupBtn{
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    background: var(--btnBackColor);
+    color: #fff;
+    padding: 7px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.content a{
+    color: var(--btnBackColor);
+    font-weight: bold;
+    padding: 0 7px;
+}
+
+/* -- Finish of cookie popup -- */
+
+.header{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    height: 15px;
+    width: 100%;
+    background: var(--whiteColor);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0, 0.2); /* sul server mettere 0,0,0,0.1 perchè fa schifo */
+}
+
+.fermeLogo{
+    width: 50px;
+}
+
+.welcomeTxt{
+    font-size: 18px;
+    color: #fff;
+}
+
+.showMenuBtn{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    width: 35px;
+    height: 50px;
+    border: none;
+}
+
+.showMenuBtn svg{
+    width: 80%;
+    fill: var(--darkTxtColor);
+}
+
+#showMenu{
+    display: block;
+}
+#showScriviBox{
+    display: block;
+}
+#showScriviBox:not(:checked) ~ .mainContent .scriviBox{
+    display: none;
+}
+#showMenu:checked ~ .sidebar{
+    width: 300px;
+    margin-left: 0;
+}
+#showMenu:not(:checked) ~ .sidebar ul li a{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar .accBtn{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar #darkmodeBtn{
+    display: none;
+}
+.fermeLogo{
+    width: 50px;
+    margin-left: 50px;
+}
+
+.regBtn{
+    padding: 7px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 10px 10px 20px 0 rgba(0,0,0, 0.2);
+}
+
+.sidebar{
+    position: fixed;
+    margin-left: -60px;
+    width: 60px;
+    height: 95%;
+    left: 0;
+    top: 60px;
+    background: var(--whiteColor);
+    transition: 0.5s;
+    box-shadow: 10px 10px 10px 0 rgba(0,0,0, 0.2);
+}
+
+.sidebar ul{
+    top: 0;
+    left: 0;
+    min-width: 100%;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li:hover{
+    background: var(--darkerWhiteTxtColor);
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: var(--whiteColor);
+    text-decoration: none;
+    line-height: 60px;
+    align-items: center;
+}
+
+.sidebar ul li a .icon{
+    fill: var(--darkTxtColor);
+    position: relative;
+    display: block;
+    width: 60px;
+    line-height: 60px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a span{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 60px;
+    color: var(--darkTxtColor);
+}
+
+#darkmodeBtn{
+    cursor: pointer;
+    left: 15px;
+    fill: var(--darkTxtColor);
+    position: fixed;
+    bottom: 10px;
+}
+
+.accBtn{
+    position: fixed;
+    bottom: 10px;
+    left: 55px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 10px 10px 20px 0 rgba(0,0,0, 0.2);
+}
+
+.mainContent{
+    width: 100%;
+    height: 100%;
+}
+
+.mainContent .welcomeBlock{
+    min-width: 70%;
+    height: 20vh;
+    margin-left: 60px;
+}
+
+.welcomeBlock h1{
+    margin-top: 80px;
+    margin-right: 50px;
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--darkTxtColor);
+}
+
+.welcomeBlock p{
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--darkTxtColor);
+}
+
+.mainContent .forumChatLinks{
+    min-width: 90%;
+    margin-left: 60px;
+    height: 80vh;
+}
+
+.forumChatLinks .chatLink{
+    margin-bottom: 20px;
+    text-decoration: none;
+    min-height: 120px;
+    cursor: pointer;
+    width: 60%;
+    border-radius: 15px;
+    background: var(--whiteColor);
+    box-shadow: 0 0 30px 0 rgba(0,0,0, 0.2);
+    transition: .5s;
+    transition-property: background, box-shadow;
+}
+.chatLink:hover{
+    background: var(--darkerWhiteTxtColor);
+    box-shadow: 0 0 30px 0 rgba(0,0,0, 0.3);
+}
+
+.forumChatLinks form label input{
+    display: none;
+}
+
+.chatLink h3{
+    color: var(--darkTxtColor);
+    margin-left: 20px;
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+.chatLink .descTxt{
+    color: var(--darkTxtColor);
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.chatLink .numMessaggi{
+    color: var(--darkTxtColor);
+    padding-right: 10px;
+    font-weight: 550;
+    text-align: right;
+}
+
+@media screen and (max-width: 800px){
+	.mainContent .welcomeBlock{
+		margin-left: 15px;
+	}
+	.mainContent .forumChatLinks{
+		margin-top: 40px;
+		min-width: 100%;
+		margin-left: 15px;
+	}
+	.forumChatLinks .chatLink{
+		width: 90%;
+	}
+}

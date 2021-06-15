@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&display=swap');
+
+@media screen and (max-width: 800px){
+    .mainContent .mainImgBlock{
+        min-width: 90%;
+    }
+    .mainContent h1{
+        padding-top: 60px;
+    }
+    .cookiePopup{
+        max-width: 500px;
+        min-width: 330px;
+    }
+}
+
+:root{
+    --mainBodyColor: #f9f9fa;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #e6e6e6;
+    --whiteColor: #fff;
+    --darkTxtColor: #071426;
+
+    /*--mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #22262e;
+    --darkTxtColor: #e7e7e7;*/
+}
+.darkMode{
+    --mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #23262e;
+    --darkTxtColor: #e7e7e7;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index:20;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: var(--mainBodyColor);
+}
+
+/* -- Start of cookie popup -- */
+
+.cookiePopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 25px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    z-index:21;
+}
+
+.cookiePopup.hide{
+    display: none;
+}
+
+.content{
+    margin-top: 10px;
+}
+
+.content h3{
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--darkTxtColor);
+}
+
+.content p{
+    margin-top: 5px;
+    color: var(--darkTxtColor);
+}
+
+.popupBtn{
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    background: var(--btnBackColor);
+    color: #fff;
+    padding: 7px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.content a{
+    color: var(--btnBackColor);
+    font-weight: bold;
+    padding: 0 7px;
+}
+
+/* -- Finish of cookie popup -- */
+
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    padding: 30px 10px;
+    height: 15px;
+    width: 100%;
+    background: var(--whiteColor);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+    z-index: 5000; 
+}
+
+.navInfoBtn{
+    position: absolute;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 5px 15px;
+}
+.navInfoBtn img{
+    border-radius: 50%;
+}
+.navInfoBtn p{
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.showMenuBtn{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    width: 35px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+}
+
+.showMenuBtn svg{
+    width: 80%;
+    fill: var(--darkTxtColor);
+}
+
+#showMenu{
+    display: block;
+}
+#showMenu:checked ~ .sidebar{
+    width: 300px;
+    margin-left: 0;
+}
+#showMenu:not(:checked) ~ .sidebar ul li a{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar .accBtn{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar #darkmodeBtn{
+    display: none;
+}
+
+
+.header .regBtn{
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px 0;
+}
+
+.sidebar{
+    position: fixed;
+    margin-left: -60px;
+    width: 60px;
+    height: 95%;
+    left: 0;
+    top: 60px;
+    background: var(--whiteColor);
+    transition: 0.5s;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.1);
+    z-index: 21;
+}
+
+.sidebar ul{
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    z-index: 22;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    z-index: 23;
+}
+
+.sidebar ul li:hover{
+    background: var(--darkerWhiteTxtColor);
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: var(--whiteColor);
+    text-decoration: none;
+    line-height: 60px;
+    align-items: center;
+    z-index: 24;
+}
+
+.sidebar ul li a .icon{
+    fill: var(--darkTxtColor);
+    position: relative;
+    display: block;
+    width: 60px;
+    line-height: 60px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 24;
+}
+
+.sidebar ul li a span{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 60px;
+    color: var(--darkTxtColor);
+}
+
+#darkmodeBtn{
+    cursor: pointer;
+    left: 15px;
+    fill: var(--darkTxtColor);
+    position: fixed;
+    bottom: 10px;
+}
+
+.accBtn{
+    position: fixed;
+    bottom: 10px;
+    left: 55px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.mainContent{
+    min-width: 100%;
+    height: 100%;
+}
+
+.mainContent h1{
+    color: var(--darkTxtColor);
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    padding: 100px 20px 10px 20px;
+}
+
+.mainContent p{
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--darkTxtColor);
+    text-align: center;
+    padding: 0 20px 10px 20px;
+}
+.mainContent .initialBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.initialBlock .mainImgBlock{
+    width: 60%;
+}
+
+.initialBlock .mainImgBlock img{
+    min-width: 98%;
+    min-height: 100%;
+    margin-left: 2%;
+}
+
+.infoBlock{
+    min-width: 100%;
+    min-height: 800px;
+}
+
+.infoBlock h1{
+    color: var(--darkTxtColor);
+    font-size: 45px;
+}

@@ -1,0 +1,123 @@
+#Main {
+	margin: 5% auto;
+	max-width: 700px;
+	padding: 20px;	
+}
+		
+.divFloat {
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 40%;
+	padding: 5% 25px;
+	box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.1);
+	border: 2px solid #d6d9db;
+	border-radius: 10px;
+}
+		
+.buttonTemplate {
+	padding: 7px 15px;
+	border-radius: 20px;
+	cursor: pointer;
+	background: var(--btnBackColor);
+	color: var(--whiteColor);
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	border: none;
+	display: inline;
+}
+		
+.inputTemplate {
+	display:block;
+	width:80%;
+	margin:auto;
+	padding: 10px;
+}
+		
+.center {
+	text-align: center;
+}
+
+.profileBox {
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 40%;
+	padding: 5% 25px;
+	border: 4px solid #d6d9db;
+	border-radius: 10px;
+	margin: auto;
+	width: 300px;
+	max-width: 90%;
+}
+		
+.descBox {
+	border: 4px solid #d6d9db;
+	border-radius: 10px;
+	padding: 15px;
+	overflow: auto;
+}
+	
+.amBox {
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 40%;
+	padding: 5% 25px;
+	border: 4px solid #d6d9db;
+	border-radius: 10px;
+	margin: auto;
+	width: 300px;
+	max-width: 90%;
+}
+	
+.statBox {
+	background: var(--btnBackColor);
+	color: white;
+	border: none;
+	border-radius:15px;
+	margin:auto;
+	padding: 7% 2%;
+	min-height: 50%;
+	min-width: 20%;
+	max-width: 40%;
+	max-height: 50%;
+	text-align: center;
+	font-size: 100%;
+}
+        
+.profileImg {
+	border-radius:50%;
+}
+
+textarea {
+	text-align: left;
+	border-radius: 10px;
+	padding-top: 2px;
+	padding-left:2px;
+	padding-right:2px;
+	border: 4px solid #d6d9db;
+	max-width: 100%;
+}
+
+/* sicuramente non un copia incolla da stack overflow*/
+.labl {
+	padding:10px;
+	display : block;
+	width: 195px;
+	height: 195px;
+	z-index: -99999;
+}
+.labl > input{ /* HIDE RADIO */
+	visibility: hidden; /* Makes input not-clickable */
+	position: absolute; /* Remove input from document flow */  
+}
+.labl > input + div{ /* DIV STYLES */
+	cursor:pointer;
+	border:2px solid transparent;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+	padding:10px;
+	background-color: #e6f2ff;
+	border: 1px solid #00abde;
+	border-radius: 10px;
+}
+.circle {
+	border-radius: 50%;
+	z-index: -99999;
+}

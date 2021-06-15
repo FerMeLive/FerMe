@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --mainBodyColor: #f9f9f9;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #f1f1f1;
+    --whiteColor: #fff;
+    --darkTxtColor: #071426;
+
+    /*--mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #22262e;
+    --darkTxtColor: #e7e7e7;*/
+}
+.darkMode{
+    --mainBodyColor: #171a1f;
+    --btnBackColor: #00abde;
+    --darkerWhiteTxtColor: #1d2025;
+    --whiteColor: #23262e;
+    --darkTxtColor: #e7e7e7;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: var(--mainBodyColor);
+}
+
+/* -- Start of cookie popup -- */
+
+.cookiePopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 25px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.cookiePopup.hide{
+    display: none;
+}
+
+.cookieImg{
+    max-width: 80px;
+}
+
+.content{
+    margin-top: 10px;
+}
+
+.content h3{
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--darkTxtColor);
+}
+
+.content p{
+    margin-top: 5px;
+    color: var(--darkTxtColor);
+}
+
+.popupBtn{
+    border: none;
+    border-radius: 20px;
+    margin-top: 8px;
+    background: var(--btnBackColor);
+    color: #fff;
+    padding: 7px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.content a{
+    color: var(--btnBackColor);
+    font-weight: bold;
+    padding: 0 7px;
+}
+
+/* -- Finish of cookie popup -- */
+
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding: 30px 10px;
+    height: 15px;
+    width: 100%;
+    background: var(--whiteColor);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.welcomeTxt{
+    font-size: 17px;
+    color: var(--darkTxtColor);
+    font-weight: 600;
+}
+
+.showMenuBtn{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    width: 35px;
+    height: 50px;
+}
+
+.showMenuBtn svg{
+    width: 80%;
+    fill: var(--darkTxtColor);
+}
+
+#showMenu{
+    display: block;
+}
+#showScriviBox{
+    display: block;
+}
+#showScriviBox:not(:checked) ~ .mainContent .scriviBox{
+    display: none;
+}
+#showMenu:checked ~ .sidebar{
+    width: 300px;
+    margin-left: 0;
+}
+#showMenu:not(:checked) ~ .sidebar ul li a{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar .accBtn{
+    display: none;
+}
+#showMenu:not(:checked) ~ .sidebar #darkmodeBtn{
+    display: none;
+}
+.header .fermeLogo{
+    width: 50px;
+    margin-left: 50px;
+}
+
+.header .regBtn{
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-self: flex-end;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.sidebar{
+    position: fixed;
+    margin-left: -60px;
+    width: 60px;
+    height: 95%;
+    left: 0;
+    top: 60px;
+    background: var(--whiteColor);
+    transition: 0.5s;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+
+.sidebar ul{
+    top: 0;
+    left: 0;
+    min-width: 100%;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li:hover{
+    background: var(--darkerWhiteTxtColor);
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: var(--whiteColor);
+    text-decoration: none;
+    line-height: 60px;
+    align-items: center;
+}
+
+.sidebar ul li a .icon{
+    fill: var(--darkTxtColor);
+    position: relative;
+    display: block;
+    width: 60px;
+    line-height: 60px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a span{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 60px;
+    color: var(--darkTxtColor);
+}
+
+#darkmodeBtn{
+    cursor: pointer;
+    left: 15px;
+    fill: var(--darkTxtColor);
+    position: fixed;
+    bottom: 10px;
+}
+
+.sidebar .accBtn{
+    position: fixed;
+    bottom: 10px;
+    left: 55px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+#primaChattarePopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    min-width: 300px;
+    padding: 25px 25px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#primaChattarePopup h2{
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--darkTxtColor);
+}
+#primaChattarePopup p{
+    margin-top: 5px;
+    color: var(--darkTxtColor);
+    padding-bottom: 20px;
+}
+#primaChattarePopup .accBtn{
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}
+#primaChattarePopup .regBtn{
+    margin-left: 10px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}
+#primaChattarePopup #closeChatPopupBtn{
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    background: rgb(226, 19, 19);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+    margin-left: 10px;
+}
+.closeLoginChatPopup{
+    display: none;
+}
+
+.mainContent{
+    min-width: 100%;
+    height: 100%;
+}
+
+.mainContent .welcomeBlock{
+    min-width: 70%;
+    min-height: 100px;
+    margin-left: 60px;
+}
+
+.forumBackBtn{
+    display: flex;
+    width: 220px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 45px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}
+.forumBackBtn svg{
+    align-self: center;
+    margin-right: 6px;
+    fill: #fff;
+}
+
+.welcomeBlock h1{
+    color: var(--darkTxtColor);
+    margin-top: 80px;
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.welcomeBlock p{
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--darkTxtColor);
+    padding-bottom: 15px;
+}
+
+.messaggio{
+    margin-left: 60px;
+    width: 45%;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    box-shadow: 0px 0 20px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.topBlock{
+    display: flex;
+}
+
+.topBlock img{
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.userInfoBlock{
+    justify-self: flex-start;
+    margin-top: 15px;
+    margin-left: 20px;
+    /* helo */
+}
+
+.messaggio .topBlock .userInfoBlock button{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--darkTxtColor);
+    cursor: pointer;
+}
+
+.userInfoBlock .ruoloTxt{
+    font-weight: 700;
+    font-size: 16px;
+    margin-left: 6px;
+    margin-top: 5px;
+    float: right;
+    color: var(--btnBackColor);
+}
+.userInfoBlock .dataTxt{
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--darkTxtColor);
+}
+.messaggio .messaggioTxt{
+    margin-left: 15px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    color: var(--darkTxtColor);
+    width: 95%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 15px;
+}
+.delMsgForm{
+    margin-top: -18px;
+    margin-left: 65px;
+}
+.delMsgForm button{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.delMsgForm button svg{
+    fill: #de0000;
+}
+.modMsgForm{
+    margin-top: -20px;
+    margin-left: 90px;
+    margin-bottom: 10px;
+}
+.modMsgForm button{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.modMsgForm button svg{
+    fill: var(--darkTxtColor);
+}
+
+#showScriviBoxBtn{
+    display: flex;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}
+#showScriviBoxBtn svg{
+    align-self: center;
+    margin-right: 6px;
+    fill: #fff;
+}
+.mainContent .scriviBox{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0,0,0, 0.3);
+    box-shadow: 0 0 30px 0 rgba(0,0,0, 0.2);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    transition-property: background;
+}
+
+.scriviBox form{
+    width: 620px;
+    padding: 15px 20px 20px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--whiteColor);
+}
+
+.scriviBox textarea{
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: var(--mainBodyColor);
+    color: var(--darkTxtColor);
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 29px 0;
+    padding-top: 13px;
+    padding-left: 15px;
+    transition: .5s;
+    transition-property: background, box-shadow;
+    resize: none;
+}
+.scriviBox textarea:focus{
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px 1px;
+    background: var(--darkerWhiteTxtColor);
+}
+.scriviBoxForm .topBlock{
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.scriviBoxForm h2{
+    color: var(--darkTxtColor);
+}
+
+.scriviBox .btnPart{
+    border-radius: 25px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.scriviBox .inviaBtn{
+    margin-left: 5px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    background: var(--btnBackColor);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+}
+.scriviBoxForm .closeBtn{
+    border-radius: 50%;
+    font-size: 22px;
+    padding-right: 5px;
+    font-weight: 700;
+    color: var(--darkTxtColor);
+    cursor: pointer;
+}
+
+.mainContent .segnalareForm{
+    margin-left: 60px;
+    width: 45%;
+    margin-top: -18px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+.segnalareForm .segnalaBtn{
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: 600;
+    padding-bottom: 3px;
+    cursor: pointer;
+    color: var(--darkTxtColor);
+}
+.segnalareForm .segnalaBtn svg{
+    fill: #de0000;
+}
+
+.segnala {
+	position:relative;
+	border: none;
+	border-radius: 20px;
+	background: #d9d9d9;
+	padding:6px;
+}
