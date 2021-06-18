@@ -293,7 +293,7 @@
                     <input id="hobbyInput" name="forum" value="hobby" type="submit">
                     <div class="chatLink">
                         <h3>Hobby</h3><br>
-                        <p class="descTxt">Come sprecate il vostro tempo libero?</p><br>
+                        <p class="descTxt">Come usate il vostro tempo libero?</p><br>
                         <p class="numMessaggi"><?php echo $hobby;?> Messaggi(<?php echo $hobbyPercent;?>%)</p>
                     </div>
                     <?php
