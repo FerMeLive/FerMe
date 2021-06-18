@@ -105,17 +105,17 @@
 		return $result;
 	}
 	
-	$animePercent = @percent($anime, $tot);
-	$artePercent = @percent($arte, $tot);
-	$cinemaPercent = @percent($cinema, $tot);
-	$compitiPercent = @percent($compiti, $tot);
-	$cucinaPercent = @percent($cucina, $tot);
-	$gamingPercent = @percent($gaming, $tot);
-	$hobbyPercent = @percent($hobby, $tot);
-	$informaticaPercent = @percent($informatica, $tot);
-	$musicaPercent = @percent($musica, $tot);
-	$sportPercent = @percent($sport, $tot);
-	$altroPercent = @percent($altro, $tot);
+		$animePercent = round(@percent($anime, $tot));
+		$artePercent = round(@percent($arte, $tot));
+		$cinemaPercent = round(@percent($cinema, $tot));
+		$compitiPercent = round(@percent($compiti, $tot));
+		$cucinaPercent = round(@percent($cucina, $tot));
+		$gamingPercent = round(@percent($gaming, $tot));
+		$hobbyPercent = round(@percent($hobby, $tot));
+		$informaticaPercent = round(@percent($informatica, $tot));
+		$musicaPercent = round(@percent($musica, $tot));
+		$sportPercent = round(@percent($sport, $tot));
+		$altroPercent = round(@percent($altro, $tot));
 ?>
 
 <!DOCTYPE html>

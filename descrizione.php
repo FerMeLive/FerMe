@@ -95,17 +95,17 @@
 			return $result;
 		}
 		
-		$animePercent = @percent($anime, $tot);
-		$artePercent = @percent($arte, $tot);
-		$cinemaPercent = @percent($cinema, $tot);
-		$compitiPercent = @percent($compiti, $tot);
-		$cucinaPercent = @percent($cucina, $tot);
-		$gamingPercent = @percent($gaming, $tot);
-		$hobbyPercent = @percent($hobby, $tot);
-		$informaticaPercent = @percent($informatica, $tot);
-		$musicaPercent = @percent($musica, $tot);
-		$sportPercent = @percent($sport, $tot);
-		$altroPercent = @percent($altro, $tot);
+		$animePercent = round(@percent($anime, $tot));
+		$artePercent = round(@percent($arte, $tot));
+		$cinemaPercent = round(@percent($cinema, $tot));
+		$compitiPercent = round(@percent($compiti, $tot));
+		$cucinaPercent = round(@percent($cucina, $tot));
+		$gamingPercent = round(@percent($gaming, $tot));
+		$hobbyPercent = round(@percent($hobby, $tot));
+		$informaticaPercent = round(@percent($informatica, $tot));
+		$musicaPercent = round(@percent($musica, $tot));
+		$sportPercent = round(@percent($sport, $tot));
+		$altroPercent = round(@percent($altro, $tot));
 		
 		if(isset($_POST['descrizione'])){
 			//recupero input html
@@ -133,9 +133,7 @@
 			
 			<!--cose amicizie-->
 			<div class="amBox" class="center">
-				<a href="/messaggi.php" class="buttonTemplate"> Messaggiate Privatamente </a>
-				<br>
-				<br>
+				<!--<a href="/messaggi.php" class="buttonTemplate"> Messaggiate Privatamente </a>-->
 				<?php
 					//amicizia
 					if($id != 0){
@@ -223,7 +221,7 @@
 			<div class="descBox">
 				<h4 class="center"><strong>Descrizione:</strong></h4>
 				<br>
-				<pre style= font-size: 18px;  font-family: "Avenir, Verdana, sans-serif";>
+				<pre style= font-size: 18px;  text-align: center; font-family: "Avenir, Verdana, sans-serif";>
 				<?php echo $description;?>
 				</pre>
 				<br>

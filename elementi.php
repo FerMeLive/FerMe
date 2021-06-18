@@ -36,7 +36,7 @@
 					<label for=\"showMenu\" class=\"showMenuBtn\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M12 18c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z\"/></svg></label>
 					<img class=\"fermeLogo\" src=\"/imagesFolder/fermeLogo.png\" width=\"50px\" height=\"50px\">
 					<div class=\"navInfoBtn\">
-						<strong><p>Benvenuto, $username</p></strong>
+						<strong><p>$username</p></strong>
 					</div>
 				</div>";
 		}
@@ -144,9 +144,9 @@
 		return $conn;
 	}
 	
-	//funzone per censurare parolacce
+	//funzione per censurare parolacce
 	function censura($messaggio){
-		$parolacce = array("merd", "MERD", "m3RD", "M3rd", "M3RD", "m3rd", "Cazz", "cazz", "c4zz", "C4zz", "C4ZZ", "Putta", "putta", "Puta", "puta", "PUTA", "Pu7a", "Pu77a", "pu7a", "pu77a", "PUTTA", "PU77A", "dio", "Dio", " culo", "fanculo", "FANCULO", "fancullo", "F4NCULO", "FANCULLO", "F4NCULLO", "DIO",  " fica", " FICA", "coglion", "COGLION", "colion", "COLION", "Colion", "Coglion", "C0glion", "c0glion", "C0GLION", "C0lion", "c0lion", "C0LION", "sperm", "Sperm", "SPERM", "sp3rm", "Sp3rm", "SP3RM", "fott", "FOTT", "Fott", "fo77", "FO77", "Fo77", "d10", "di0", "d1o", "D10", "DI0", "D1O"); //lista di parole da evitare
+		$parolacce = array("merd", "cazz", "putta", "dio", "Dio"); //lista di parole da evitare
 		$contatore = 0;
 		$stato = TRUE;
 		while($contatore < sizeof($parolacce)){

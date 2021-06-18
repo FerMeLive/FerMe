@@ -156,7 +156,7 @@
     <label id="showScriviBoxBtn" for="showScriviBox"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M19.769 9.923l-12.642 12.639-7.127 1.438 1.438-7.128 12.641-12.64 5.69 5.691zm1.414-1.414l2.817-2.82-5.691-5.689-2.816 2.817 5.69 5.692z"/></svg>Scrivi un messaggio</label>
 
     <div class="mainContent">
-    <div class="welcomeBlock">
+    	<div class="welcomeBlock">
             <h1><?php echo $forum; ?></h1>
             <a class="forumBackBtn" href="/forum.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M0 12l9-8v6h15v4h-15v6z"/></svg>Torna alla lista dei forum</a>
         </div>
@@ -269,7 +269,7 @@
 					if($stato){
 						echo $messaggio;
 					} else {
-						echo "$segnalazioni utenti hanno ritenuto questo messaggio offensivo.<br><form method=post><button type='submit' style='position:relative;
+						echo "$segnalazioni utenti hanno ritenuto questo messaggio offensivo.<br><form method=post><button class='visualizzaBtn' type='submit' style='position:relative;
 	border: none;
 	border-radius: 20px;
 	background: #d9d9d9;
@@ -279,14 +279,14 @@
 				echo"</h4></div>";
 				if($moderatore == TRUE or $idMittente == $id){
 					echo "<form class='delMsgForm' method='post'><button type='submit' name='delete' value='$max'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'><path d='M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z'/></svg></button></form>";
-					echo "<form class='modMsgForm' method='post'><button style='position:relative; top:-0.3em;' type='submit' name='modifica' value='$max'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'><path d='M19.769 9.923l-12.642 12.639-7.127 1.438 1.438-7.128 12.641-12.64 5.69 5.691zm1.414-1.414l2.817-2.82-5.691-5.689-2.816 2.817 5.69 5.692z'/></svg></button></form>";
+					echo "<form class='modMsgForm' method='post'><button style='position:relative; top:-0.35em;' type='submit' name='modifica' value='$max'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'><path d='M19.769 9.923l-12.642 12.639-7.127 1.438 1.438-7.128 12.641-12.64 5.69 5.691zm1.414-1.414l2.817-2.82-5.691-5.689-2.816 2.817 5.69 5.692z'/></svg></button></form>";
 				}
 				
 				//controllo se questo messaggio è già stato segnalato dall'utente
 				$query = mysqli_query($conn, "SELECT * FROM segnalazioni WHERE messaggio = '$max' AND idSegnalatore = '$id' AND forum = '$forum'");
 				$fromObj = mysqli_fetch_assoc($query);
 				if(@count($fromObj) == 0){
-					echo "<form class='segnalaMsgForm' method=\"post\"><button type='submit' class='segnala' name='segnala' value='$max'><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\"><path d=\"M4 24h-2v-24h2v24zm18-22h-16v12h16l-4-5.969 4-6.031z\"/></svg>Segnala</button></form>";
+					echo "<form class='segnalaMsgForm' method=\"post\"><button style='position:relative; right: -1em;' type='submit' class='segnala' name='segnala' value='$max'><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\"><path d=\"M4 24h-2v-24h2v24zm18-22h-16v12h16l-4-5.969 4-6.031z\"/></svg>Segnala</button></form>";
 				} else {
 					echo "<form method=post><button type='submit' style='position:relative;
 	border: none;

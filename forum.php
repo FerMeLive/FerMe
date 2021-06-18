@@ -5,9 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/cssFolder/forum.css">
+    <link rel="stylesheet" href="/cssFolder/forum.css" media="all">
     <link rel="shortcut icon" type="image/png" href="/imagesFolder/faviconImg.png">
     <title>FerMe | Forum</title>
+    <style>
+        @media screen and (max-width: 850px){
+            .cookiePopup{
+                max-width: 500px;
+                min-width: 330px;
+            }
+            .mainContent .welcomeBlock{
+                margin-left: 20px;
+            }
+            .mainContent .forumChatLinks{
+                margin-left: 20px;
+            }
+            .forumChatLinks .chatLink{
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 <body>
 	<?php
@@ -92,17 +109,17 @@
 			return $result;
 		}
 		
-		$animePercent = @percent($anime, $tot);
-		$artePercent = @percent($arte, $tot);
-		$cinemaPercent = @percent($cinema, $tot);
-		$compitiPercent = @percent($compiti, $tot);
-		$cucinaPercent = @percent($cucina, $tot);
-		$gamingPercent = @percent($gaming, $tot);
-		$hobbyPercent = @percent($hobby, $tot);
-		$informaticaPercent = @percent($informatica, $tot);
-		$musicaPercent = @percent($musica, $tot);
-		$sportPercent = @percent($sport, $tot);
-		$altroPercent = @percent($altro, $tot);
+		$animePercent = round(@percent($anime, $tot));
+		$artePercent = round(@percent($arte, $tot));
+		$cinemaPercent = round(@percent($cinema, $tot));
+		$compitiPercent = round(@percent($compiti, $tot));
+		$cucinaPercent = round(@percent($cucina, $tot));
+		$gamingPercent = round(@percent($gaming, $tot));
+		$hobbyPercent = round(@percent($hobby, $tot));
+		$informaticaPercent = round(@percent($informatica, $tot));
+		$musicaPercent = round(@percent($musica, $tot));
+		$sportPercent = round(@percent($sport, $tot));
+		$altroPercent = round(@percent($altro, $tot));
 		
 		//recupero del numero di segnalazioni
 		$sql="select count(*) as total from segnalazioni where forum = 'anime'";
@@ -176,22 +193,22 @@
                         <p class="numMessaggi"><?php echo $informatica;?> Messaggi(<?php echo $informaticaPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniInformatica != 0){
-							echo "$segnalazioniInformatica segnalazioni in questo forum";
-						}
+			if($segnalazioniInformatica != 0){
+				echo "$segnalazioniInformatica segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="cucinaInput">
                     <input id="cucinaInput" name="forum" value="cucina" type="submit">
                     <div class="chatLink">
                         <h3>Cucina</h3><br>
-                        <p class="descTxt">Non fatemi venire l'acquolina</p><br>
+                        <p class="descTxt">Non fatemi venire l'acquolina in bocca</p><br>
                         <p class="numMessaggi"><?php echo $cucina;?> Messaggi(<?php echo $cucinaPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniCucina != 0){
-							echo "$segnalazioniCucina segnalazioni in questo forum";
-						}
+			if($segnalazioniCucina != 0){
+				echo "$segnalazioniCucina segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="sportInput">
@@ -202,9 +219,9 @@
                         <p class="numMessaggi"><?php echo $sport;?> Messaggi(<?php echo $sportPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniSport != 0){
-							echo "$segnalazioniSport segnalazioni in questo forum";
-						}
+			if($segnalazioniSport != 0){
+				echo "$segnalazioniSport segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="animeInput">
@@ -215,9 +232,9 @@
                         <p class="numMessaggi"><?php echo $anime;?> Messaggi(<?php echo $animePercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniAnime != 0){
-							echo "$segnalazioniAnime segnalazioni in questo forum";
-						}
+			if($segnalazioniAnime != 0){
+				echo "$segnalazioniAnime segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="arteInput">
@@ -228,9 +245,9 @@
                         <p class="numMessaggi"><?php echo $arte;?> Messaggi(<?php echo $artePercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniArte != 0){
-							echo "$segnalazioniArte segnalazioni in questo forum";
-						}
+			if($segnalazioniArte != 0){
+				echo "$segnalazioniArte segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="cinemaInput">
@@ -241,9 +258,9 @@
                         <p class="numMessaggi"><?php echo $cinema;?> Messaggi(<?php echo $cinemaPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniCinema != 0){
-							echo "$segnalazioniCinema segnalazioni in questo forum";
-						}
+			if($segnalazioniCinema != 0){
+				echo "$segnalazioniCinema segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="compitiInput">
@@ -254,9 +271,9 @@
                         <p class="numMessaggi"><?php echo $compiti;?> Messaggi(<?php echo $compitiPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniCompiti != 0){
-							echo "$segnalazioniCompiti segnalazioni in questo forum";
-						}
+			if($segnalazioniCompiti != 0){
+				echo "$segnalazioniCompiti segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="gamingInput">
@@ -267,9 +284,9 @@
                         <p class="numMessaggi"><?php echo $gaming;?> Messaggi(<?php echo $gamingPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniGaming != 0){
-							echo "$segnalazioniGaming segnalazioni in questo forum";
-						}
+			if($segnalazioniGaming != 0){
+				echo "$segnalazioniGaming segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="hobbyInput">
@@ -280,9 +297,9 @@
                         <p class="numMessaggi"><?php echo $hobby;?> Messaggi(<?php echo $hobbyPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniHobby != 0){
-							echo "$segnalazioniHobby segnalazioni in questo forum";
-						}
+			if($segnalazioniHobby != 0){
+				echo "$segnalazioniHobby segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="musicaInput">
@@ -293,9 +310,9 @@
                         <p class="numMessaggi"><?php echo $musica;?> Messaggi(<?php echo $musicaPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniMusica != 0){
-							echo "$segnalazioniMusica segnalazioni in questo forum";
-						}
+			if($segnalazioniMusica != 0){
+				echo "$segnalazioniMusica segnalazioni in questo forum";
+			}
                     ?>
                 </label>
                 <label for="altroInput">
@@ -306,9 +323,9 @@
                         <p class="numMessaggi"><?php echo $altro;?> Messaggi(<?php echo $altroPercent;?>%)</p>
                     </div>
                     <?php
-						if($segnalazioniAltro != 0){
-							echo "$segnalazioniAltro segnalazioni in questo forum";
-						}
+			if($segnalazioniAltro != 0){
+				echo "$segnalazioniAltro segnalazioni in questo forum";
+			}
                     ?>
                 </label>
             </form>
